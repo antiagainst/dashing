@@ -6,11 +6,19 @@
     "index": "index.html",
     "allowJS": false,
     "selectors": {
-        "p > a[id^=\"vk\"]": {
-          "type": "Command",
-          "attr": "id"
-        },
         "p + pre.programlisting": [
+            {
+                "requiretext": "^[a-zA-Z]+ [[:word:]]+\\(",
+                "type": "Command",
+                "regexp": "^[a-zA-Z]+ ([[:word:]]+)\\([[:ascii:]]+$",
+                "replacement": "${1}"
+            },
+            {
+                "requiretext": "^[a-zA-Z]+ [[:word:]]+\\(",
+                "type": "Command",
+                "regexp": "^[a-zA-Z]+ ([[:word:]]+)\\([[:ascii:]]+$",
+                "replacement": "${1}"
+            },
             {
                 "requiretext": "^typedef struct",
                 "type": "Struct",
