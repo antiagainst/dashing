@@ -51,6 +51,14 @@
             "replacement": "VK_KHR_${1}"
         },
         "div.section > div.itemizedlist > ul.itemizedlist > li.listitem > em.parameter:first-of-type > code": "Parameter",
+        "div.section > div.itemizedlist > ul.itemizedlist > li.listitem > code.code:first-child": {
+            "requiretext": "^VK_[A-Z_]+",
+            "type": "Constant"
+        },
+        "div.variablelist > dl.variablelist > dt > span.term > code.code:first-child": {
+            "requiretext": "^VK_[A-Z_]+",
+            "type": "Constant"
+        },
         "dt > span.term > a.link[title=\"Error codes\"]": "Error",
         "h1": "Section",
         "h2": "Section"
