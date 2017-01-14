@@ -50,7 +50,7 @@
             "regexp": "^C\\.[0-9]\\.[0-9]+\\. VK_KHR_([[:word:]]+)$",
             "replacement": "VK_KHR_${1}"
         },
-        "div.section > div.itemizedlist > ul.itemizedlist > li.listitem > em.parameter:first-child > code": "Parameter",
+        "div.section > div.itemizedlist > ul.itemizedlist > li.listitem > em.parameter:first-of-type > code": "Parameter",
         "dt > span.term > a.link[title=\"Error codes\"]": "Error",
         "h1": "Section",
         "h2": "Section"
