@@ -32,6 +32,12 @@
                 "replacement": "${1}"
             },
             {
+                "requiretext": "^typedef union",
+                "type": "Union",
+                "regexp": "^typedef union ([[:word:]]+) [[:ascii:]]+$",
+                "replacement": "${1}"
+            },
+            {
                 "requiretext": "^VK_DEFINE_",
                 "type": "Object",
                 "regexp": "^VK_DEFINE_[_A-Z]*HANDLE\\(([[:word:]]+)\\)$",
