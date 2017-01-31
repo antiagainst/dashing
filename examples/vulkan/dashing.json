@@ -3,22 +3,14 @@
     "package": "vulkan",
     "icon32x32": "icon@2x.png",
     "ExternalURL": "https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html",
-    "index": "index.html",
+    "index": "vkspec.html",
     "allowJS": false,
     "selectors": {
-        "p + pre.programlisting": [
-            {
-                "requiretext": "^[a-zA-Z]+ [[:word:]]+\\(",
-                "type": "Command",
-                "regexp": "^[a-zA-Z]+ ([[:word:]]+)\\([[:ascii:]]+$",
-                "replacement": "${1}"
-            },
-            {
-                "requiretext": "^[a-zA-Z]+ [[:word:]]+\\(",
-                "type": "Command",
-                "regexp": "^[a-zA-Z]+ ([[:word:]]+)\\([[:ascii:]]+$",
-                "replacement": "${1}"
-            },
+        "div.listingblock > div.content > pre > tt > span:nth-child(2) > span": {
+          "requiretext": "vk[A-Z][a-zA-Z]+",
+          "type": "Command"
+        },
+        "div.listingblock > div.content > pre > tt": [
             {
                 "requiretext": "^typedef struct",
                 "type": "Struct",
@@ -38,36 +30,48 @@
                 "replacement": "${1}"
             },
             {
-                "requiretext": "^VK_DEFINE_",
+                "requiretext": "^VK_DEFINE_[_A-Z]*HANDLE",
                 "type": "Object",
                 "regexp": "^VK_DEFINE_[_A-Z]*HANDLE\\(([[:word:]]+)\\)$",
                 "replacement": "${1}"
             }
         ],
-        "h2.title": {
-            "requiretext": "^C\\.[0-9]\\. VK_KHR_",
+        "h3": {
+            "requiretext": "^VK_KHR_",
             "type": "Extension",
-            "regexp": "^C\\.[0-9]\\. VK_KHR_([[:word:]]+)$",
+            "regexp": "^VK_KHR_([[:word:]]+)$",
             "replacement": "VK_KHR_${1}"
         },
-        "h3.title": {
-            "requiretext": "^C\\.[0-9]\\.[0-9]+\\. VK_KHR_",
+        "h4": {
+            "requiretext": "^VK_KHR_",
             "type": "Extension",
-            "regexp": "^C\\.[0-9]\\.[0-9]+\\. VK_KHR_([[:word:]]+)$",
+            "regexp": "^VK_KHR_([[:word:]]+)$",
             "replacement": "VK_KHR_${1}"
         },
-        "div.section > div.itemizedlist > ul.itemizedlist > li.listitem > em.parameter:first-of-type > code": "Parameter",
-        "div.section > div.itemizedlist > ul.itemizedlist > li.listitem > code.code:first-child": {
+        "div.listingblock + div.ulist > ul > li > p:first-child > code:first-child": [
+            {
+                "requiretext": "^VK_[A-Z_]+",
+                "type": "Constant"
+            },
+            {
+                "requiretext": "^[a-z][a-zA-Z_]+",
+                "type": "Parameter"
+            }
+        ],
+        "div.listingblock + div.paragraph + div.ulist > ul > li > p:first-child > code:first-child": {
             "requiretext": "^VK_[A-Z_]+",
             "type": "Constant"
         },
-        "div.variablelist > dl.variablelist > dt > span.term > code.code:first-child": {
+        "div#fundamentals-errorcodes > ul > li > p:first-child > code:first-child": {
             "requiretext": "^VK_[A-Z_]+",
             "type": "Constant"
         },
-        "dt > span.term > a.link[title=\"Error codes\"]": "Error",
-        "h1": "Section",
-        "h2": "Section"
+        "div.openblock + div.ulist > ul > li > p:first-child > code:first-child": {
+            "requiretext": "^VK_[A-Z_]+",
+            "type": "Constant"
+        },
+        "h2": "Section",
+        "h3": "Section"
     },
     "ignore": [
       ""
