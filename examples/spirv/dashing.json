@@ -1,0 +1,33 @@
+{
+    "name": "SPIR-V",
+    "package": "spirv",
+    "icon32x32": "icon@2x.png",
+    "ExternalURL": "https://www.khronos.org/registry/spir-v/specs/1.1/SPIRV.html",
+    "index": "SPIRV.html",
+    "allowJS": false,
+    "selectors": {
+      "h2": "Section",
+      "h3": "Section",
+      "h4": "Section",
+      "h3#_a_id_instructions_a_instructions ~ div.sect3 > table.tableblock > tbody > tr:first-child > td:first-child > p:first-child > strong:first-of-type": "Instruction",
+      "h4#_a_id_type_declaration_a_type_declaration_instructions ~ table.tableblock > tbody > tr:first-child > td:first-child > p:first-child > strong:first-of-type": "Type",
+      "h4#_a_id_annotation_a_annotation_instructions ~ table.tableblock > tbody > tr:first-child > td:first-child > p:first-child > strong:first-of-type": "Annotation",
+      "h2#_a_id_binary_a_binary_form ~ div.sectionbody > div.sect2 > table.tableblock > tbody > tr > td:nth-of-type(2) > p:first-child > strong:first-child": "Value",
+      "h3#_a_id_builtin_a_builtin ~ table.tableblock > tbody > tr > td:nth-of-type(2) > p:first-child > strong:first-child": "Builtin",
+      "h2#_a_id_binary_a_binary_form ~ div.sectionbody > div.sect2 > h3[id^=\"_a_id_\"]": {
+        "type": "Enum",
+        "regexp": "3\\.[[:digit:]]+\\. ([[:ascii:]]+)",
+        "replacement": "${1}"
+      },
+      "h3#_terms ~ div.sect3 > div.paragraph > p:first-child > em:first-of-type": {
+        "requiretext": "[[:ascii:]]+:",
+        "type": "Define",
+        "regexp": "([[:ascii:]]+):",
+        "replacement": "${1}"
+      }
+    },
+    "ignore": [
+      "Contributors and Acknowledgments"
+    ]
+}
+
