@@ -2,8 +2,8 @@
     "name": "Vulkan",
     "package": "vulkan",
     "icon32x32": "icon@2x.png",
-    "ExternalURL": "https://www.khronos.org/registry/vulkan/specs/1.0-wsi_extensions/xhtml/vkspec.html",
-    "index": "vkspec.html",
+    "ExternalURL": "https://renderdoc.org/vkspec_chunked/index.html",
+    "index": "index.html",
     "allowJS": false,
     "selectors": {
         "div.listingblock[id^=\"vk\"] > div.content > pre.CodeRay.highlight > code[data-lang=\"c++\"]": {
@@ -38,11 +38,65 @@
             "regexp": "^typedef enum ([[:word:]]+) [[:ascii:]]+$",
             "replacement": "${1}"
         },
-        "h3[id^=\"VK_KHR_\"]": {
+        "h4[id^=\"VK_KHR_\"]": {
             "requiretext": "^VK_KHR_",
             "type": "Extension",
             "regexp": "^VK_KHR_([[:word:]]+)$",
             "replacement": "VK_KHR_${1}"
+        },
+        "h4[id^=\"VK_EXT_\"]": {
+            "requiretext": "^VK_EXT_",
+            "type": "Extension",
+            "regexp": "^VK_EXT_([[:word:]]+)$",
+            "replacement": "VK_EXT_${1}"
+        },
+        "h4[id^=\"VK_AMD_\"]": {
+            "requiretext": "^VK_AMD_",
+            "type": "Extension",
+            "regexp": "^VK_AMD_([[:word:]]+)$",
+            "replacement": "VK_AMD_${1}"
+        },
+        "h4[id^=\"VK_ANDROID_\"]": {
+            "requiretext": "^VK_ANDROID_",
+            "type": "Extension",
+            "regexp": "^VK_ANDROID_([[:word:]]+)$",
+            "replacement": "VK_ANDROID_${1}"
+        },
+        "h4[id^=\"VK_FUCHSIA_\"]": {
+            "requiretext": "^VK_FUCHSIA_",
+            "type": "Extension",
+            "regexp": "^VK_FUCHSIA_([[:word:]]+)$",
+            "replacement": "VK_FUCHSIA_${1}"
+        },
+        "h4[id^=\"VK_GOOGLE_\"]": {
+            "requiretext": "^VK_GOOGLE_",
+            "type": "Extension",
+            "regexp": "^VK_GOOGLE_([[:word:]]+)$",
+            "replacement": "VK_GOOGLE_${1}"
+        },
+        "h4[id^=\"VK_IMG_\"]": {
+            "requiretext": "^VK_IMG_",
+            "type": "Extension",
+            "regexp": "^VK_IMG_([[:word:]]+)$",
+            "replacement": "VK_IMG_${1}"
+        },
+        "h4[id^=\"VK_MVK_\"]": {
+            "requiretext": "^VK_MVK_",
+            "type": "Extension",
+            "regexp": "^VK_MVK_([[:word:]]+)$",
+            "replacement": "VK_MVK_${1}"
+        },
+        "h4[id^=\"VK_NN_\"]": {
+            "requiretext": "^VK_NN_",
+            "type": "Extension",
+            "regexp": "^VK_NN_([[:word:]]+)$",
+            "replacement": "VK_NN_${1}"
+        },
+        "h4[id^=\"VK_NV_\"]": {
+            "requiretext": "^VK_NV_",
+            "type": "Extension",
+            "regexp": "^VK_NV_([[:word:]]+)$",
+            "replacement": "VK_NV_${1}"
         },
         "div.listingblock + div.ulist > ul > li > p:first-child > code:first-child": [
             {
