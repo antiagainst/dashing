@@ -74,6 +74,12 @@
             "regexp": "^VK_GOOGLE_([[:word:]]+)$",
             "replacement": "VK_GOOGLE_${1}"
         },
+        "h4[id^=\"VK_GGP_\"]": {
+            "requiretext": "^VK_GGP_",
+            "type": "Extension",
+            "regexp": "^VK_GGP_([[:word:]]+)$",
+            "replacement": "VK_GGP_${1}"
+        },
         "h4[id^=\"VK_IMG_\"]": {
             "requiretext": "^VK_IMG_",
             "type": "Extension",
